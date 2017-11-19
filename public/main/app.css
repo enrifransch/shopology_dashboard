@@ -1,0 +1,43 @@
+/* app css stylesheet */
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+  }
+  
+  .menu:before {
+    content: "[";
+  }
+  
+  .menu:after {
+    content: "]";
+  }
+  
+  .menu > li {
+    display: inline;
+  }
+  
+  .menu > li + li:before {
+    content: "|";
+    padding-right: 0.3em;
+  }
+  
+  .graphs {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  green {
+    color: #97C11F;
+  }
+  
+  .docs-datepicker {
+    width: 70%;
+  }
+  .img-logo {
+    width: 50px;
+    left: 1%;
+    top: 8px;
+    position: absolute;
+  }

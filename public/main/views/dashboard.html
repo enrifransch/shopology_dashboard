@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="container">
+        <h1 style="color: #21C400;">¡Bienvenido!</h1>
+        <br>
+        <h4>Hoy es {{day}}
+            <green>{{date}}</green> de
+            <green>{{month}}</green> del {{year}}</h4>
+    </div>
+    <div class="graphs">
+        <div class="row text-center p-md-4" style="background-color: #CCE5FE;">
+            <div class="col">
+                <h2>Tickets por día:</h2>
+                <h1><strong>{{ticketDaily}}</strong></h1>
+            </div>
+            <div class="col">
+                <h2>Promedio por ticket</h2>
+                <h1><strong>${{ticketAverage}}</strong></h1>
+            </div>
+            <div class="col">
+                <h2>Artículos por ticket</h2>
+                <h1><strong>{{ticketItems}}</strong></h1>
+            </div>
+        </div>
+        <div class="row justify-content-md-center ">
+            <div class="col col-md-auto m-2">
+                <green>
+                    <h1>Gráficas</h1>
+                </green>
+            </div>
+        </div>
+        <div class="row">           
+            <div class="col-md-4 col-sm-12 p-md-4">
+                <h3>Número de tickets</h3>
+                <br>
+                <canvas id="myChart" width="400" height="400" style="width: 400px; height: 400px;"></canvas>
+            </div>
+            <div class="col-md-4 col-sm-12 p-md-4">
+                    <h3>Cantidad por ticket</h3>
+                    <br>
+                    <canvas id="myLineChart" width="400" height="400"></canvas>
+                </div>
+            <div class="col-md-4 col-sm-12 p-md-4">
+                <h3>Artículos por ticket %</h3>
+                <br>
+                <canvas id="myPieChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+</div>

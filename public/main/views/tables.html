@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <div class="row">
+                    <h3>Selecionar fecha:</h3>
+                </div>
+                <form name="dateForm">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+                                   ng-model="checkboxModel.value1" ng-disabled="checkboxModel.value2">
+                            Fecha única
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2"
+                                   ng-model="checkboxModel.value2" ng-disabled="checkboxModel.value1">
+                            Rango de fechas
+                        </label>
+                    </div>
+                </form>
+                <div ng-show="checkboxModel.value1">
+                    <h3>Fecha única: </h3>
+                    <h4>{{selectedDates[0] | date : 'fullDate'}}</h4>
+                    <uib-datepicker ng-model='activeDate' ng-click='singleDateClick()' multi-select='selectedDates'
+                                    template-url='multi-datepicker.tpl.html'></uib-datepicker>
+                    <div class="row justify-content-start p-3">
+                        <button type="button" style="margin: 5px 10px;" class="btn btn-primary"
+                                ng-click="clickOnlyDate()" ng-disabled="!singleDateChosed">Aceptar
+                        </button>
+                    </div>
+                </div>
+                <div ng-show="checkboxModel.value2">
+                    <h3>Rango de fechas:</h3>
+                    <h4>
+                        <strong>Inicio:</strong> {{(selectedDatesMulti | orderBy)[0] | date:"fullDate"}}<br>
+                        <span ng-if='selectedDatesMulti.length > 1'>
+                          <strong>Fin:</strong> {{(selectedDatesMulti | orderBy : '-')[0] | date:"fullDate"}}
+                        </span>
+                    </h4>
+                    <uib-datepicker ng-model='activeDate' multi-select='selectedDatesMulti'
+                                    template-url='multi-datepicker.tpl.html' select-range='true'></uib-datepicker>
+                    <div class="row justify-content-start p-3">
+                        <button type="button" style="margin: 5px 10px;" class="btn btn-primary"
+                                ng-click="clickMultiDate()" ng-disabled="selectedDatesMulti.length == 1">Aceptar
+                        </button>
+                    </div>
+                    <!--<div class="docs-datepicker py-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control docs-date" name="date" placeholder="Seleccionar fecha" data-toggle="datepicker">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default docs-datepicker-trigger" disabled="">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <h3>Fecha fin</h3>
+                    <div class="docs-datepicker py-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control docs-date" name="date" placeholder="Seleccionar fecha" data-toggle="datepicker">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default docs-datepicker-trigger" disabled="">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-start p-3">
+                        <button type="button" class="btn btn-primary">Aceptar</button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="btn btn-success pull-right" ng-csv="getData()" csv-header="headers" filename="{{ getFileName() }}.csv" data-toggle="tooltip"
+                 title="Exportar tabla seleccionada a Excel" style="margin-bottom: 10px; cursor: pointer;">Exportar a
+                Excel
+            </div>
+            <table ng-table="tableParams" class="table" show-filter="true">
+                <tr ng-repeat="ticket in $data">
+                    <td title="'#Ticket'" filter="{ num_ticket: 'number'}" sortable="'num_ticket'">{{ticket.num_ticket}}
+                    </td>
+                    <td title="'Tienda'" filter="{ Tienda: 'text'}" sortable="'Tienda'">{{ticket.Tienda}}</td>
+                    <td title="'Sucursal'" filter="{ Sucursal: 'text'}" sortable="'Sucursal'">{{ticket.Sucursal}}</td>
+                    <td title="'#Artículos'" filter="{ num_articulos: 'number'}" sortable="'num_articulos'">{{ticket.num_articulos}}</td>
+                    <td title="'Fecha'" filter="{ Fecha: 'number'}" sortable="'Fecha'">{{ticket.Fecha | date:"fullDate"}}</td>
+                    <td title="'Total'" filter="{ Total: 'number'}" sortable="'Total'">${{ticket.Total}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

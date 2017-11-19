@@ -1,0 +1,26 @@
+{
+  "name": "shopology-dashboard",
+  "description": "",
+  "main": "",
+  "authors": [
+    "enrifransch <enrifransch@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-route": "~1.5.0",
+    "angular-loader": "~1.5.0",
+    "angular-mocks": "~1.5.0",
+    "html5-boilerplate": "^5.3.0",
+    "angular-multiple-date-picker": "multiple-date-picker#^2.1.5",
+    "ng-csv": "^0.3.6"
+  }
+}

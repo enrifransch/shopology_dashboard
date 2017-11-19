@@ -1,0 +1,35 @@
+{
+  "name": "shopology-dashboard",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "angular-ui-bootstrap": "^0.14.1",
+    "angular-ui-bootstrap-datetimepicker": "^2.5.0",
+    "body-parser": "~1.18.2",
+    "bower": "^1.8.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "gm.datepicker-multi-select": "^1.0.10",
+    "http-server": "^0.9.0",
+    "jade": "~1.11.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.8",
+    "karma-junit-reporter": "^0.4.1",
+    "morgan": "~1.9.0",
+    "mysql": "^2.15.0",
+    "protractor": "^4.0.9",
+    "serve-favicon": "~2.4.5"
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
