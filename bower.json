@@ -6,7 +6,7 @@
     "enrifransch <enrifransch@gmail.com>"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/enrifransch/shopology_dashboard",
   "ignore": [
     "**/.*",
     "node_modules",
