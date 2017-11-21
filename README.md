@@ -1,6 +1,6 @@
 Aquí se encuentra la aplicación web de Dashboard para el proyecto Catch&Watch realizado para la empresa Shopology por parte de alumnos del Tecnológico de Monterrey Campus Estado de México para la materia Proyecto Integrador.
 
-Autores:
+# Autores:
 
 Enrique Franco
 
@@ -11,3 +11,13 @@ Eduardo Castilla
 Héctor Saldaña
 
 Gabriela Aguilar
+
+**Comandos para iniciar la aplicación**
+
+>npm install
+
+>bower install
+
+>npm start
+
+
