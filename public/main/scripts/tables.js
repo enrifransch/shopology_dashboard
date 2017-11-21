@@ -29,8 +29,10 @@ angular.module('myApp.tables', ['ngRoute', 'ngTable'])
             this.singleDateChosed = true;
         }
 
+        //metodo html que obtiene los datos de la base de datos
         $http.get('/tickets').success(function(data){
             $scope.data = data;
+            //poblar la tabla
             $scope.tableParams = new NgTableParams({
                 page: 1,
                 count: 25,
@@ -40,7 +42,7 @@ angular.module('myApp.tables', ['ngRoute', 'ngTable'])
             }, { dataset: $scope.data });
         });
 
-        /*
+        /* Datos dummy, descomentar si no hay conexion con la BD para su visualizacion
         $scope.data = [
             { num_ticket: 1, Tienda: 'Starbucks', Sucursal: 'Arboledas', num_articulos: 1, Fecha: '10/10/2017', Total: 50 },
             { num_ticket: 2, Tienda: 'Starbucks', Sucursal: 'Satélite', num_articulos: 2, Fecha: '02/21/2016', Total: 120 },
@@ -132,42 +134,4 @@ angular.module('myApp.tables', ['ngRoute', 'ngTable'])
             value2 : false
           };
 
-        //inicializa la tabla
-        /*$scope.tableParams = new NgTableParams({
-            page: 1,
-            count: 25,
-            reload: $scope.tableParams,
-            total: $scope.data.length,
-            counts: []
-        }, { dataset: $scope.data });*/
-
     }]);
-
-/*
-        var $date = $('.docs-date');
-        var $container = $('.docs-datepicker-container');
-        var $trigger = $('.docs-datepicker-trigger');
-        var options = {
-          show: function (e) {
-          },
-          hide: function (e) {
-          },
-          pick: function (e) {
-          },
-          autoHide: true,
-        };
-
-        $date.on({
-          'show.datepicker': function (e) {
-            //console.log(e.type, e.namespace);
-          },
-          'hide.datepicker': function (e) {
-            //console.log(e.type, e.namespace);
-          },
-          'pick.datepicker': function (e) {
-            //console.log(e.date);
-            clickOnlyDate(new Date(e.date));
-          }
-        }).datepicker(options);
-
-        //$('[data-toggle="datepicker-single"]').datepicker();*/
