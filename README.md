@@ -12,7 +12,7 @@ Héctor Saldaña
 
 Gabriela Aguilar
 
-**Comandos para iniciar la aplicación**
+## Comandos para iniciar la aplicación
 
 >npm install
 
