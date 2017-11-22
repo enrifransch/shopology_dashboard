@@ -93,7 +93,7 @@ angular.module('myApp.tables', ['ngRoute', 'ngTable'])
             //console.log(tempDate);
             $scope.data.forEach(function (e) {
                 var temp = new Date(e.Fecha);
-                if(tempDate.getTime() === temp.getTime()) {
+                if(tempDate.getFullYear()+tempDate.getMonth()+tempDate.getDay() === temp.getFullYear()+temp.getMonth()+temp.getDay()) {
                     $scope.newData.push(e);
                 }
             });
